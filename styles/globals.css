@@ -8,6 +8,26 @@
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
 
+.branding {
+  background: #050816;
+  width: 100vw;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 20;
+}
+
+.logo {
+  height: 25px;
+  padding-left: 65px;
+}
+
+.github-logo-container {
+  margin-left: auto;
+  margin-right: 65px;
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -91,6 +111,10 @@
 
 .orange_gradient {
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.emerald_gradient {
+  @apply bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent;
 }
 
 .green_gradient {

@@ -1,8 +1,8 @@
-import './globals.css'
+import '../styles/globals.css'
 
 export const metadata = {
   title: 'Prompts',
-  description: 'Discover and Share AI prompts',
+  description: 'Discover & Share AI prompts',
 }
 
 export default function RootLayout({ children }) {
