@@ -6,7 +6,7 @@ export default function Home() {
       <h1 className="head_text text-center" >
         Discover & Share
         <br className="max-md:hidden" />
-        <span className="emerald_gradient" >AI-Powered Prompts</span>
+        <span className="emerald_gradient" > AI-Powered Prompts</span>
       </h1>
       <Feed />
     </section>

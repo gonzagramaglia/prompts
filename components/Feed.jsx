@@ -1,7 +1,7 @@
 
 const Feed = () => {
   return (
-    <div>Feed</div>
+    <div className="mt-36" >Feed</div>
   )
 }
 
