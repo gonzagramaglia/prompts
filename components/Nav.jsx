@@ -7,17 +7,17 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 const Nav = () => {
 
-    const isUserLoggedIn = true ;
+    const { data: session } = useSession();
 
     const [providers, setProviders] = useState(null)
     const [toggleDropDown, setToggleDropDown] = useState(false)
 
     useEffect(() => {
-        const setProviders = async () => {
+        const setUpProviders = async () => {
             const response = await getProviders()
             setProviders(response)
         }
-        setProviders();
+        setUpProviders();
     }, [])
     
 
@@ -34,7 +34,7 @@ const Nav = () => {
             </Link>
             {/* {Desktop  Navigation } */}
             <div className="hidden sm:flex" >
-                {isUserLoggedIn ? (
+                {session?.user ? (
                     <div className="flex gap-3 md:gap-5" >
                         <Link href="/create-prompt" className="black_btn" >
                             Create Post
@@ -50,7 +50,7 @@ const Nav = () => {
                             href="/profile"
                         >
                             <Image
-                                src="/assets/images/logo.svg"
+                                src={session?.user.image}
                                 alt="profile picture"
                                 height="37"
                                 width="37"
@@ -60,7 +60,7 @@ const Nav = () => {
                     </div>
                 ) : (
                     <>
-                        {providers && Object.value(providers).map((provider) => (
+                        {providers && Object.values(providers).map((provider) => (
                             <button
                                 type="button"
                                 key={provider.name}
@@ -76,10 +76,10 @@ const Nav = () => {
 
             {/* Mobile Navigation */}
             <div className="sm:hidden flex relative" >
-                {isUserLoggedIn ? (
+                {session?.user ? (
                     <div className="flex" >
                         <Image
-                            src="/assets/images/logo.svg"
+                            src={session?.user.image}
                             alt="profile picture"
                             height="37"
                             width="37"
@@ -118,7 +118,7 @@ const Nav = () => {
                     </div>
                 ) : (
                     <>
-                        {providers && Object.value(providers).map((provider) => (
+                        {providers && Object.values(providers).map((provider) => (
                             <button
                                 type="button"
                                 key={provider.name}

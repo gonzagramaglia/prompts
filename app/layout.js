@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
               href="https://www.gonza.gr/" 
               target="_blank"
           >
-              <img src="https://i.postimg.cc/Zn8nQjjH/logo.png" alt="logo" class='logo' /> 
+              <img src="https://i.postimg.cc/Zn8nQjjH/logo.png" alt="logo" className='logo' /> 
           </a>
           <a 
               href="https://github.com/gonzagramaglia/chatgpt" 
