@@ -7,6 +7,8 @@ import { useState } from "react";
 import Form from "@/components/Form";
 
 const createPrompt = () => {
+    const router = useRouter();
+    const { data: session } = useSession();
 
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({
@@ -17,7 +19,30 @@ const createPrompt = () => {
     })
 
     const createPrompt = async (e) => {
+        e.preventDefault();
+        setSubmitting(true);
 
+        try {
+            const response = await fetch('api/prompt/new', {
+                method: 'POST',
+                body: JSON.stringify({ 
+                    prompt: post.prompt, 
+                    description: post.description,
+                    userId: session?.user.id,
+                    platform: post.platform,
+                    tag: post.tag 
+                })
+            }); 
+
+            if(response.ok){
+                router.push('/');
+            }
+
+        } catch(error) {
+            console.log(error)
+        } finally {
+            setSubmitting(false)
+        }
     }
 
     return (
@@ -26,6 +51,7 @@ const createPrompt = () => {
             post={post}
             setPost={setPost}
             submitting={submitting}
+            handleSubmit={createPrompt}
         />
     )
 }

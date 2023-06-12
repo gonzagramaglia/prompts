@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Form = ({ type, post, setPost, submitting }) => {
+const Form = ({ type, post, setPost, submitting, handleSubmit}) => {
   return (
     <section
       className="w-full max-w-full flex-start flex-col mt-32"
@@ -12,7 +12,7 @@ const Form = ({ type, post, setPost, submitting }) => {
         {type} and share amazing prompts with the world and let your imagination run wild with any AI-powered platform
       </p>
       <form
-        onClick={() => {}} 
+        onSubmit={handleSubmit}
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
         <label>
