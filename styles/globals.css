@@ -114,7 +114,7 @@
 }
 
 .emerald_gradient {
-  @apply bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -152,7 +152,7 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[100px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
 .form_input {
