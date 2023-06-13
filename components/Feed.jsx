@@ -42,14 +42,14 @@ const Feed = () => {
     setTag(tag)
   }
 
+  const fetchPosts = async () => {
+    const response = await fetch('/api/prompt');
+    const data = await response.json();
+
+    setPosts(data)
+  }
+
   useEffect( () => {
-    const fetchPosts = async() => {
-      const response = await fetch('/api/prompt');
-      const data = await response.json();
-
-      setPosts(data)
-    }
-
     fetchPosts();
   }, [])
 
