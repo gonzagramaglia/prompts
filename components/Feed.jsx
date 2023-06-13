@@ -51,9 +51,7 @@ const Feed = () => {
     }
 
     fetchPosts();
-  }, [tag])
-
-  console.log(posts)
+  }, [])
 
   return (
     <section className="mt-36 feed" >
