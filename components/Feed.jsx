@@ -3,19 +3,28 @@
 import { useState, useEffect } from "react";
 import PromptCard from './PromptCard';
 
-const PromptCardList = ({ data, handleTagClick }) => {
+
+const PromptCardList = ({ tag, data, handleTagClick }) => {
   return (
     <div className="mt-16 prompt_layout" >
-      {data.map( (post) => (
-          <PromptCard 
-            key={post._id}
-            post={post}
-            handleTagClick={handleTagClick}
-            handleEdit={''}
-            handleDelete={''}
-          />
-        )
-      )}
+      { !tag 
+          ? data.map( (post) => (
+            <PromptCard 
+              key={post._id}
+              post={post}
+              handleTagClick={handleTagClick}
+            />
+          )) 
+          : data.filter( (post) => (
+            post.tag === tag
+          )).map( (post) => (
+            <PromptCard 
+              key={post._id}
+              post={post}
+              handleTagClick={handleTagClick}
+            />
+          )) 
+      }
     </div>
   )
 }
@@ -23,9 +32,14 @@ const PromptCardList = ({ data, handleTagClick }) => {
 const Feed = () => {
   const [searchText, setSearchText] = useState('');
   const [posts, setPosts] = useState([])
+  const [tag, setTag] = useState('')
 
   const handleSearchChange = (e) => {
 
+  }
+
+  const handleTagClick = (tag) => {
+    setTag(tag)
   }
 
   useEffect( () => {
@@ -37,7 +51,7 @@ const Feed = () => {
     }
 
     fetchPosts();
-  }, [])
+  }, [tag])
 
   console.log(posts)
 
@@ -55,8 +69,9 @@ const Feed = () => {
       </form>
 
       <PromptCardList
+        tag={tag}
         data={posts}
-        handleTagClick={() => {}}
+        handleTagClick={handleTagClick}
       />
     </section>
   )
