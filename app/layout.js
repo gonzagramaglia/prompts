@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
               <img src="https://i.postimg.cc/Zn8nQjjH/logo.png" alt="logo" className='logo' /> 
           </a>
           <a 
-              href="https://github.com/gonzagramaglia/chatgpt" 
+              href="https://github.com/gonzagramaglia/prompts" 
               className='github-logo-container'
               target="_blank"
           >
