@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import Form from "@/components/Form";
 
-const createPrompt = () => {
+const CreatePrompt = () => {
     const router = useRouter();
     const { data: session } = useSession();
 
@@ -56,4 +56,4 @@ const createPrompt = () => {
     )
 }
 
-export default createPrompt
+export default CreatePrompt
