@@ -19,11 +19,11 @@ export default function RootLayout({ children }) {
               href="https://www.gonza.gr/" 
               target="_blank"
           >
-              <img src="https://i.postimg.cc/Zn8nQjjH/logo.png" alt="logo" className='logo' /> 
+              <img src="https://i.postimg.cc/Zn8nQjjH/logo.png" alt="logo" className='logo sm:pl-[65px]' /> 
           </a>
           <a 
               href="https://github.com/gonzagramaglia/prompts" 
-              className='github-logo-container'
+              className='github-logo-container sm:pr-[65px]'
               target="_blank"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="22" height="22" fill="#a9a6c3">
